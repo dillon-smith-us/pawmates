@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/dillon-smith-us/pawmates#readme",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^6.2.1"
   }
 }
