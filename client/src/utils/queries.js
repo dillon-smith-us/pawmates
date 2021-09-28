@@ -7,7 +7,7 @@ export const QUERY_USER = gql`
             username
             email
             zipCode
-            phonenumber
+            phoneNumber
             puppyAbout
             puppyAge
             puppyBreed
@@ -24,7 +24,7 @@ export const QUERY_ME = gql`
             username
             email
             zipCode
-            phonenumber
+            phoneNumber
             puppyAbout
             puppyAge
             puppyBreed
