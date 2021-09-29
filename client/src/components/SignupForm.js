@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/react-hooks";
 import { Form, Button, Alert } from "react-bootstrap";
 
 // import { createUser } from '../utils/API';
+// To Do: Import mutation after Apollo pkg is installed.
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 
@@ -11,6 +12,12 @@ const SignupForm = () => {
     username: "",
     email: "",
     password: "",
+    zipCode: "",
+    phoneNumber: "",
+    puppyAbout: "",
+    puppyAge: "",
+    puppyBreed: "",
+
   });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -40,6 +47,11 @@ const SignupForm = () => {
       username: "",
       email: "",
       password: "",
+      zipCode: "",
+      phoneNumber: "",
+      puppyAbout: "",
+      puppyAge: "",
+      puppyBreed: "",
     });
   };
 
@@ -99,12 +111,96 @@ const SignupForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="zipCode">Zip Code</Form.Label>
+          <Form.Control
+            type="zipCode"
+            placeholder="Your Zip Code"
+            name="zipCode"
+            onChange={handleInputChange}
+            value={userFormData.zipCode}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Zip Code is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="phoneNumber">Phone Number</Form.Label>
+          <Form.Control
+            type="phoneNumber"
+            placeholder="Your Phone Number"
+            name="phoneNumber"
+            onChange={handleInputChange}
+            value={userFormData.phoneNumber}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Phone number is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        {/* To Do: change to text area */}
+        <Form.Group>
+          <Form.Label htmlFor="phoneAbout">About your Puppy</Form.Label>
+          <Form.Control
+            type="puppyAbout"
+            placeholder="About your puppy"
+            name="puppyAbout"
+            onChange={handleInputChange}
+            value={userFormData.puppyAbout}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            A short description of your puppy is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        {/* To Do: Add Years/Months choices */}
+        <Form.Group>
+          <Form.Label htmlFor="puppyAge">Puppy's Age</Form.Label>
+          <Form.Control
+            type="puppyAge"
+            placeholder="Your puppy's age"
+            name="puppyAge"
+            onChange={handleInputChange}
+            value={userFormData.puppyAge}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Puppy's age is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="puppyBreed">Puppy's Breed</Form.Label>
+          <Form.Control
+            type="puppyBreed"
+            placeholder="Your puppy's breed"
+            name="puppyBreed"
+            onChange={handleInputChange}
+            value={userFormData.puppyBreed}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Puppy's breed is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
         <Button
           disabled={
             !(
               userFormData.username &&
               userFormData.email &&
-              userFormData.password
+              userFormData.password &&
+              userFormData.zipCode &&
+              userFormData.phoneNumber &&
+              userFormData.puppyAbout &&
+              userFormData.puppyAge &&
+              userFormData.puppyBreed
+
             )
           }
           type="submit"
