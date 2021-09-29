@@ -1,22 +1,23 @@
-
 import React from 'react';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import {BrowserRouter as Router, Switch, Route }from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import './style.css';
-import Footer from './components/Footer';
-import SignupForm from './components/SignupForm';
-import LoginForm from './components/LoginForm';
-// UNCOMMENT ONCE PAGES ARE WORKING
-// import Navbar from './components/Navbar';
-
-import Landing from './pages/Landing';
-
-// import likeProfiles from './pages/likedProfiles';
-// import Profle from './pages/Profile';
-// import Home from './pages/home';
-// import Dashboard from './pages/dashboard';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { Provider } from 'react-redux';
+import {store} from './utils/store';
+
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Nav from './components/Nav';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -37,37 +38,27 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <>
-         {/* <Navbar/> */}
-         <Switch>
-            {/* <Route path="/Home" component= {Home} /> */}
-            <Route path="/Landing" component= {Landing} />
-            <Route path="/SignupForm" component= {SignupForm} />
-            <Route path="/LoginForm" component= {LoginForm} />
-
-            {/* <Route path="/likedProfiles" component= {likeProfiles} /> */}
-            {/* <Route path="/Profile" component= {Profle} /> */}
-            {/* <Route path="/dashboard" component= {Dashboard} /> */}
-            <Route path ="/" exact component= {Landing} />
-            
-         </Switch>
-         <Footer />
-      </>
+        <div>
+          <Provider store={store}>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/success" component={Success} />
+              <Route exact path="/orderHistory" component={OrderHistory} />
+              <Route exact path="/products/:id" component={Detail} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Provider>
+        </div>
       </Router>
-      </ApolloProvider>
+    </ApolloProvider>
   );
 }
-
-const HomePage = () => (
-  <div>
-    <Landing />
-  </div>
-)
 
 export default App;
