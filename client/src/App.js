@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Switch, Route }from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './style.css';
 import Footer from './components/Footer';
-
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
 // UNCOMMENT ONCE PAGES ARE WORKING
 // import Navbar from './components/Navbar';
 
@@ -47,6 +48,9 @@ function App() {
          <Switch>
             {/* <Route path="/Home" component= {Home} /> */}
             <Route path="/Landing" component= {Landing} />
+            <Route path="/SignupForm" component= {SignupForm} />
+            <Route path="/LoginForm" component= {LoginForm} />
+
             {/* <Route path="/likedProfiles" component= {likeProfiles} /> */}
             {/* <Route path="/Profile" component= {Profle} /> */}
             {/* <Route path="/dashboard" component= {Dashboard} /> */}

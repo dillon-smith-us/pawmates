@@ -14,7 +14,7 @@ export const LOGIN_USER = gql`
 
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!, $zipcode: String!,
-phonenumber: String!, puppyabout: $String!, puppyage: String, puppybreed: String!) {
+$phonenumber: String!, $puppyabout: String!, $puppyage: String, $puppybreed: String!) {
         addUser(username: $username, email: $email, password: $password, zipcode: $zipcode,
         phonenumber: $phonenumber, puppyabout: $puppyabout, puppyage: $puppyage, puppybreed: $puppybreed) {
         token
@@ -26,14 +26,14 @@ phonenumber: String!, puppyabout: $String!, puppyage: String, puppybreed: String
   }
 `;
 
-export const LIKED_PROFILE = gql`
-  mutation likeProfile() {
+// export const LIKED_PROFILE = gql`
+//   mutation likeProfile() {
       
-  }
-`;
+//   }
+// `;
 
-export const UNLIKE_PROFILE = gql`
-  mutation unlikeProfile() {
+// export const UNLIKE_PROFILE = gql`
+//   mutation unlikeProfile() {
       
-  }
-`;
+//   }
+// `;
