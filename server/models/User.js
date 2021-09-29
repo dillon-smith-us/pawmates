@@ -19,27 +19,28 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  zipcode: {
+  zipCode: {
     type: String,
     required: true,
     minlength: 5,
   },
-  phonenumber: {
+  phoneNumber: {
     type: String,
     required: true,
     minlength: 10,
   },
-  puppy_about: {
+  puppyAbout: {
     type: String,
     required: true,
     trim: true,
   },
-  puppy_age: {
+  // TO DO: Signup form: user can choose between months and years.
+  puppyAge: {
     type: String,
     required: true,
-    minlength: 1,
+    minlength: 1, 
   },
-  puppy_breed: {
+  puppyBreed: {
     type: String,
     required: true,
     trim: true,
