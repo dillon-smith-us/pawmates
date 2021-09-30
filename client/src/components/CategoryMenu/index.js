@@ -46,10 +46,11 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <div className="flex-row py-2 justify-content-center">
+      <h4>Choose a Category:</h4>
       {categories.map((item) => (
         <button
+          className="mx-1"
           key={item._id}
           onClick={() => {
             handleClick(item._id);
