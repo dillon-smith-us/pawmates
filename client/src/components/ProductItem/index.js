@@ -50,7 +50,7 @@ function ProductItem(item) {
         <p>{name}</p>
       </Link>
       <div>
-        <span>zipcode: {zipcode}</span>
+        <span>Zip code: {zipcode}</span>
       </div>
       <button onClick={addToCart}>Add to liked</button>
     </div>
