@@ -1,8 +1,8 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
-  --light: #fafafa;
+  --primary: #fff;
+  --secondary: #64B2F4;
+  --tertiary: #636665;
+  --light: #b9bbc5;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -21,11 +21,12 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Yaldevi', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+
 }
 
 h1,
@@ -73,6 +74,8 @@ a {
   color: var(--tertiary);
   text-decoration: none;
   font-weight: bold;
+  font-size: 3vh;
+  list-style-type: none;
 }
 
 a:hover {
@@ -84,7 +87,10 @@ header {
 }
 
 header a {
-  color: var(--light);
+  color: var(--dark);
+}
+header ul li {
+  list-style-type: none;
 }
 
 button {
@@ -144,7 +150,9 @@ input:focus {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
+
 
 .space-between {
   justify-content: space-between;
@@ -158,6 +166,7 @@ input:focus {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
 }
+
 
 .mx-2 {
   margin-right: var(--spacing-two);
@@ -201,6 +210,11 @@ input:focus {
 
 .error-text {
   color: var(--error);
+}
+
+.pupimages {
+  height: 35vh;
+  width: 45vh;
 }
 
 @media screen and (max-width: 768px) {
