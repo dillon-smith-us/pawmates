@@ -19,7 +19,7 @@ I WANT TO schedule playdates for my puppy<br>
 
 
 ## Credits
-Bike2Work is created and maintained by Ethan, Dillon, Jorge, Lauren, & Tuyet
+Pawmates is created and maintained by Ethan, Dillon, Jorge, Lauren, & Tuyet
 
 ## Future Improvements
 Add application process for new users where users can enter their puppy information in a form<br>
