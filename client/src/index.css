@@ -92,6 +92,9 @@ header a {
 header ul li {
   list-style-type: none;
 }
+.contact-header {
+  text-align: center;
+}
 .border {
   border-bottom: solid var(--tertiary) 4px;
 }
@@ -160,6 +163,18 @@ input:focus {
   align-items: center;
 }
 
+.flex-col {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.test {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .space-between {
   justify-content: space-between;
