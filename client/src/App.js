@@ -20,6 +20,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer/Footer";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
+import Contact from "./pages/ContactPage";
 
 
 
@@ -56,6 +57,7 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/products/:id" component={Detail} />
+              <Route exact path="/ContactPage" component={Contact} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />
