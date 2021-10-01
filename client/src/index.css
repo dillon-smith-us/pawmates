@@ -184,6 +184,10 @@ input:focus {
   justify-content: flex-end;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
